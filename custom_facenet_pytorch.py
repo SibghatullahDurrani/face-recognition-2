@@ -10,12 +10,13 @@ class Facenet:
     resnet = InceptionResnetV1(pretrained="vggface2").eval().to(device)
 
     def preprocess_img(self, frame):
-        img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        face = cv2.resize(img, (160, 160), interpolation=cv2.INTER_AREA)
-        face = F.to_tensor(np.float32(face)).to(self.device)
-        face = (face - 127.5) / 128.0
-        face = face.unsqueeze(0)
-        return face
+        if frame is not None:
+            img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            face = cv2.resize(img, (160, 160), interpolation=cv2.INTER_AREA)
+            face = F.to_tensor(np.float32(face)).to(self.device)
+            face = (face - 127.5) / 128.0
+            face = face.unsqueeze(0)
+            return face
 
         # img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         # img = cv2.resize(img, (160, 160))
