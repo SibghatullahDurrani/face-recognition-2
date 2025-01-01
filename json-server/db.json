@@ -1,0 +1,49 @@
+{
+  "employees": [
+    {
+      "id": "238d-f387-4fca-a9b3-2abe32401409",
+      "name": "Sami",
+      "attendanceIds": [],
+      "lastAttendanceId": 1
+    },
+    {
+      "id": "8941446d-96c4-41d5-a2ad-2f327acc73c2",
+      "name": "Sibghat",
+      "attendanceIds": [
+        "49d57858-d4b4-46e1-9402-9f4747bf8165",
+        "eacac2f3-de50-4482-9cb3-c1bc6affd1b3",
+        "de9d5207-013c-456d-b213-4d48e0d49f04",
+        "7c3da2cd-c165-497a-92b9-cdbe0daf29fe",
+        "aaa2d395-f413-4f1e-a394-c9923080c72c"
+      ],
+      "lastAttendanceId": "aaa2d395-f413-4f1e-a394-c9923080c72c"
+    }
+  ],
+  "attendance": [
+    {
+      "id": "1",
+      "time": 1735717230
+    },
+    {
+      "id": "49d57858-d4b4-46e1-9402-9f4747bf8165",
+      "time": 1735720835
+    },
+    {
+      "id": "eacac2f3-de50-4482-9cb3-c1bc6affd1b3",
+      "time": 1735722455
+    },
+    {
+      "id": "de9d5207-013c-456d-b213-4d48e0d49f04",
+      "time": 1735722486
+    },
+    {
+      "id": "7c3da2cd-c165-497a-92b9-cdbe0daf29fe",
+      "time": 1735722536
+    },
+    {
+      "id": "aaa2d395-f413-4f1e-a394-c9923080c72c",
+      "time": 1735722567
+    }
+  ]
+}
+

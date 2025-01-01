@@ -5,6 +5,7 @@ import cv2
 import numpy as np
 import torch
 
+import database_operations
 from custom_facenet_pytorch import Facenet
 from custom_mtcnn import Custom_MTCNN
 from retina_face import Retina_Face
@@ -64,7 +65,6 @@ def run(detector, should_recognize):
             if faces:
                 for face in faces:
                     embedding = facenet.get_face_embeddings(face[0])
-                    print(embedding.shape)
                     for person in os.listdir(database_directory):
                         for saved_embedding in os.listdir(
                             os.path.join(database_directory, person)
@@ -73,19 +73,20 @@ def run(detector, should_recognize):
                                 database_directory, person, saved_embedding
                             )
                             embedding_loaded = np.load(embedding_path)
-                            print(embedding_loaded.shape)
                             embedding_loaded = torch.from_numpy(embedding_loaded).to(
                                 facenet.get_device()
                             )
-                            print(embedding_loaded.shape)
                             distance = facenet.compare_faces(
                                 embedding, embedding_loaded
                             )
-                            print(distance)
                             if distance < 1:
+                                employee_name = database_operations.get_employee_name(
+                                    person
+                                )
+                                database_operations.manage_attendance(person)
                                 cv2.putText(
                                     frame,
-                                    person,
+                                    employee_name,
                                     (face[1], face[2]),
                                     font,
                                     1,
@@ -93,7 +94,6 @@ def run(detector, should_recognize):
                                     2,
                                     cv2.LINE_AA,
                                 )
-                                print(person)
                                 break
 
         new_frame_time = time.time()
@@ -108,4 +108,4 @@ def run(detector, should_recognize):
             break
 
 
-run(detector="retinaface", should_recognize=True)
+run(detector="mtcnn", should_recognize=True)
