@@ -1,4 +1,5 @@
 import datetime
+import urllib.parse
 import uuid
 
 import requests
@@ -62,3 +63,25 @@ def get_timestamp_now():
 
 def get_uuid():
     return str(uuid.uuid4())
+
+
+def get_employee_by_name(name):
+    url = employee_endpoint + "?"
+    params = {"name": name}
+    url = url + urllib.parse.urlencode(params)
+    return requests.get(url).json()
+
+
+def get_all_attendances_by_employee_name(name):
+    employee = get_employee_by_name(name)
+    attendances = employee[0]["attendanceIds"]
+    attendanceDates = []
+    for attendance in attendances:
+        attendanceTimeStamp = get_attendance(attendance)["time"]
+        attendanceDates.append(
+            str(datetime.datetime.fromtimestamp(attendanceTimeStamp))
+        )
+    return attendanceDates
+
+
+print(get_all_attendances_by_employee_name("Sami"))
