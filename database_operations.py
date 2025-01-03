@@ -1,4 +1,5 @@
 import datetime
+import sys
 import urllib.parse
 import uuid
 
@@ -72,8 +73,15 @@ def get_employee_by_name(name):
     return requests.get(url).json()
 
 
-def get_all_attendances_by_employee_name(name):
+def get_all_attendances_by_employee_name(name=None):
+    if name is None:
+        if len(sys.argv) == 2:
+            name = sys.argv[1]
+        else:
+            return "Name is not provided"
     employee = get_employee_by_name(name)
+    if len(employee) == 0:
+        return "Employee not found"
     attendances = employee[0]["attendanceIds"]
     attendanceDates = []
     for attendance in attendances:
@@ -84,4 +92,4 @@ def get_all_attendances_by_employee_name(name):
     return attendanceDates
 
 
-print(get_all_attendances_by_employee_name("Sami"))
+print(get_all_attendances_by_employee_name())

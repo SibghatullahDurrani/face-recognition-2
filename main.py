@@ -14,7 +14,7 @@ from retina_face import Retina_Face
 
 
 # cap = cv2.VideoCapture("video.mp4")
-cap = cv2.VideoCapture("http://192.168.100.170:4747/video")
+cap = cv2.VideoCapture("http://192.168.100.165:4747/video")
 database_directory = "./database"
 
 

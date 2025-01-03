@@ -1,10 +1,10 @@
 {
   "employees": [
     {
-      "id": "238d-f387-4fca-a9b3-2abe32401409",
+      "id": "83ef238d-f387-4fca-a9b3-2abe32401409",
       "name": "Sami",
-      "attendanceIds": [],
-      "lastAttendanceId": 1
+      "attendanceIds": ["e88fb07e-8f3b-4f36-a411-d46101b004b3"],
+      "lastAttendanceId": "e88fb07e-8f3b-4f36-a411-d46101b004b3"
     },
     {
       "id": "8941446d-96c4-41d5-a2ad-2f327acc73c2",
@@ -14,9 +14,13 @@
         "eacac2f3-de50-4482-9cb3-c1bc6affd1b3",
         "de9d5207-013c-456d-b213-4d48e0d49f04",
         "7c3da2cd-c165-497a-92b9-cdbe0daf29fe",
-        "aaa2d395-f413-4f1e-a394-c9923080c72c"
+        "aaa2d395-f413-4f1e-a394-c9923080c72c",
+        "cf7b54f3-eeef-42b2-8e97-9a702d1177aa",
+        "f9429905-c64b-452f-876d-abea1c0f3085",
+        "fbd7927c-c7bc-4af5-9086-eaf261eba564",
+        "c0c884f6-7d74-447d-81be-7b0baaa05fe1"
       ],
-      "lastAttendanceId": "aaa2d395-f413-4f1e-a394-c9923080c72c"
+      "lastAttendanceId": "c0c884f6-7d74-447d-81be-7b0baaa05fe1"
     }
   ],
   "attendance": [
@@ -43,6 +47,26 @@
     {
       "id": "aaa2d395-f413-4f1e-a394-c9923080c72c",
       "time": 1735722567
+    },
+    {
+      "id": "cf7b54f3-eeef-42b2-8e97-9a702d1177aa",
+      "time": 1735723418
+    },
+    {
+      "id": "f9429905-c64b-452f-876d-abea1c0f3085",
+      "time": 1735723547
+    },
+    {
+      "id": "fbd7927c-c7bc-4af5-9086-eaf261eba564",
+      "time": 1735723627
+    },
+    {
+      "id": "c0c884f6-7d74-447d-81be-7b0baaa05fe1",
+      "time": 1735723719
+    },
+    {
+      "id": "e88fb07e-8f3b-4f36-a411-d46101b004b3",
+      "time": 1735723720
     }
   ]
 }
